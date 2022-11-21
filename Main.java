@@ -69,6 +69,6 @@ public class Main {
             }
         }
         System.out.println("Минимальный срок стояния букета составляет - " + minLifespan);
-        System.out.println(bouquetOfFlowers[3]);
+        System.out.println("Букет, в котором есть " + bouquetOfFlowers.length + " цветка, это " + bouquetOfFlowers[0].getFlowerColor() + ", " + bouquetOfFlowers[1].getFlowerColor() + ", " + bouquetOfFlowers[2].getFlowerColor() + ", " + bouquetOfFlowers[3].getFlowerColor() + ", в общем количестве цветов " + totalBouquet + ", будет стоить - " + costBouquet +  " рублей и простоит " + minLifespan + " дней.");
     }
 }

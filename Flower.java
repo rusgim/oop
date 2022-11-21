@@ -88,6 +88,6 @@ public class Flower {
         this.bouquetOfFlowers[this.bouquetOfFlowers.length -1] = flowers;
     }
      public void flower () {
-        System.out.println(getFlowerColor() + " из " + getCountry() + " . Стоимость " + getCost() + " рублей. Срок стояния " + lifeSpan + " дней.");
+        System.out.println(getFlowerColor()  );
   }
 }
