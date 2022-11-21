@@ -36,7 +36,7 @@ public class Main {
         hyundai.avto();
         System.out.println(" ");
 
-        Flower roza = new Flower("Роза обыкновенная","Голландия", 35.59, 0);
+        Flower roza = new Flower("Роза обыкновенная","Голландия", 35.59, 0,1);
         Flower chrysanthemum = new Flower("Хризантема", "", 15, 5);
         Flower pion = new Flower("Пион", "Англия", 69.9,1);
         Flower gypsophila = new Flower("Гипсофила", "Турция", 19.5, 10);
@@ -46,8 +46,29 @@ public class Main {
         pion.flower();
         gypsophila.flower();
 
-        roza.addBouquetOfFlowers(chrysanthemum);
-        roza.addBouquetOfFlowers(pion);
-        System.out.println("всего цветов " + roza.getBouquetOfFlowers().toString());
+        System.out.println(" ");
+        Flower[] bouquetOfFlowers = new Flower[4];
+        bouquetOfFlowers[0] = new Flower("Астрамелия", "Россия", 109.9, 2,3);
+        bouquetOfFlowers[1] = new Flower("Ромашка", "Россия", 17.9, 10,50);
+        bouquetOfFlowers[2] = new Flower("Георгины", "Белорусия", 44.35, 4, 3);
+        bouquetOfFlowers[3] = new Flower("Хризантемы","Россия",178.6,3);
+        int totalBouquet = bouquetOfFlowers[0].getQuantity();
+        for (int i = 1; i < bouquetOfFlowers.length ; i++) {
+            totalBouquet = totalBouquet + bouquetOfFlowers[i].getQuantity();
+        }
+        System.out.println("Количество цветов в букете составляет - " + totalBouquet);
+        double costBouquet = bouquetOfFlowers[0].getCost() * bouquetOfFlowers[0].getQuantity() + (bouquetOfFlowers[0].getCost()*bouquetOfFlowers[0].getQuantity()/10);
+        for (int i = 1; i < bouquetOfFlowers.length; i++) {
+            costBouquet = costBouquet + (bouquetOfFlowers[i].getCost() * bouquetOfFlowers[i].getQuantity() + (bouquetOfFlowers[0].getCost()*bouquetOfFlowers[0].getQuantity()/10));
+        }
+        System.out.println("Стоимость букета составляет - " + costBouquet);
+        int minLifespan = bouquetOfFlowers[0].lifeSpan;
+        for (int i = 0; i < bouquetOfFlowers.length; i++) {
+            if (bouquetOfFlowers[i].lifeSpan < minLifespan) {
+                minLifespan = bouquetOfFlowers[i].lifeSpan;
+            }
+        }
+        System.out.println("Минимальный срок стояния букета составляет - " + minLifespan);
+        System.out.println(bouquetOfFlowers[3]);
     }
 }
