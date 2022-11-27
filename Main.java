@@ -1,3 +1,5 @@
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
         Human maksim = new Human(-34, "Максим", "Минск","Бренд-менеджер");
@@ -24,16 +26,21 @@ public class Main {
         System.out.println("У " + sarah.getName() + " " + sarah.getFriends().length + " друг");
 
         System.out.println(" ");
-        Avto lada = new Avto("Lada", "Granta", 1.7,"желтого", 2015, "Россия");
-        Avto audi = new Avto("Audi", "A8 50 L TDI quattro", 3, "черный", 2020, "Германия");
-        Avto bmw = new Avto("BMW", "Z8", 3, "черный", 2021, "Германия");
-        Avto kia = new Avto("KIA", "Sportage 4-го поколения", 2.4, "красный", 2018, "Южная Корея");
-        Avto hyundai = new Avto("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея");
-        lada.avto();
-        audi.avto();
-        bmw.avto();
-        kia.avto();
-        hyundai.avto();
+        Car lada = new Car("Lada", "Granta", 1.7,"желтого", 2015, "Россия",
+                "robotic", "седан", "a159аа159", 4, "зимняя");
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3, "черный", 2020, "Германия",
+                "", "", "", 0, "");
+        Car bmw = new Car("BMW", "Z8", 3, "черный", 2021, "Германия",
+                "", "", "", 0, "");
+        Car kia = new Car("KIA", "Sportage 4-го поколения", 2.4, "красный", 2018, "Южная Корея",
+                "", "", "", 0, "");
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея",
+                "", "", "", 0, "");
+        lada.car();
+        audi.car();
+        bmw.car();
+        kia.car();
+        hyundai.car();
         System.out.println(" ");
 
         Flower roza = new Flower("Роза обыкновенная","Голландия", 35.59, 0,1);
@@ -70,5 +77,7 @@ public class Main {
         }
         System.out.println("Минимальный срок стояния букета составляет - " + minLifespan);
         System.out.println("Букет, в котором есть " + bouquetOfFlowers.length + " цветка, это " + bouquetOfFlowers[0].getFlowerColor() + ", " + bouquetOfFlowers[1].getFlowerColor() + ", " + bouquetOfFlowers[2].getFlowerColor() + ", " + bouquetOfFlowers[3].getFlowerColor() + ", в общем количестве цветов " + totalBouquet + ", будет стоить - " + costBouquet +  " рублей и простоит " + minLifespan + " дней.");
+
+
     }
 }
