@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         Human maksim = new Human(-34, "Максим", "Минск","Бренд-менеджер");
@@ -27,15 +29,15 @@ public class Main {
 
         System.out.println(" ");
         Car lada = new Car("Lada", "Granta", 1.7,"желтого", 2015, "Россия",
-                "robotic", "седан", "a159аа159", 4, "зимняя");
+                "robotic", "седан", "a159аа159", 4, true);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3, "черный", 2020, "Германия",
-                "", "", "", 0, "");
+                "", "", "", 0, true);
         Car bmw = new Car("BMW", "Z8", 3, "черный", 2021, "Германия",
-                "", "", "", 0, "");
+                "", "", "", 0, false);
         Car kia = new Car("KIA", "Sportage 4-го поколения", 2.4, "красный", 2018, "Южная Корея",
-                "", "", "", 0, "");
+                "", "", "", 0, false);
         Car hyundai = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея",
-                "", "", "", 0, "");
+                "", "", "", 0, false);
         lada.car();
         audi.car();
         bmw.car();
@@ -77,7 +79,12 @@ public class Main {
         }
         System.out.println("Минимальный срок стояния букета составляет - " + minLifespan);
         System.out.println("Букет, в котором есть " + bouquetOfFlowers.length + " цветка, это " + bouquetOfFlowers[0].getFlowerColor() + ", " + bouquetOfFlowers[1].getFlowerColor() + ", " + bouquetOfFlowers[2].getFlowerColor() + ", " + bouquetOfFlowers[3].getFlowerColor() + ", в общем количестве цветов " + totalBouquet + ", будет стоить - " + costBouquet +  " рублей и простоит " + minLifespan + " дней.");
-
-
+        System.out.println(" ");
+        Car.Key audiKey = audi.new Key(true, true);
+        Car.Insurance audiInsurance = audi.new Insurance(LocalDate.of(2023, 9, 6), 300, "123456789");
+        audi.setKey(audiKey);
+        audi.setInsurance(audiInsurance);
+        System.out.println(audiKey);
+        System.out.println(audiInsurance);
     }
 }
